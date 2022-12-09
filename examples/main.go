@@ -68,5 +68,5 @@ func getUser() error {
 
 func queryDatabase() error {
 	// Step1. Create error with specified error code.
-	return errors.WithCode(code.ErrDatabase, "user 'Lingfei Kong' not found.")
+	return errors.WithCode(code.ErrDatabase, "user 'SRE' not found.")
 }
