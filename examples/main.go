@@ -3,35 +3,35 @@ package main
 import (
 	"fmt"
 
-	"github.com/marmotedu/errors"
+	"gitlab.icos.city/icospaas/errors"
 
-	code "github.com/marmotedu/sample-code"
+	code "gitlab.icos.city/icospaas/errors-code"
 )
 
 func main() {
 	if err := bindUser(); err != nil {
 		// %s: Returns the user-safe error string mapped to the error code or the error message if none is specified.
-		fmt.Println("====================> %s <====================")
+		fmt.Println("====================> s <====================")
 		fmt.Printf("%s\n\n", err)
 
 		// %v: Alias for %s.
-		fmt.Println("====================> %v <====================")
+		fmt.Println("====================> v <====================")
 		fmt.Printf("%v\n\n", err)
 
 		// %-v: Output caller details, useful for troubleshooting.
-		fmt.Println("====================> %-v <====================")
+		fmt.Println("====================> -v <====================")
 		fmt.Printf("%-v\n\n", err)
 
 		// %+v: Output full error stack details, useful for debugging.
-		fmt.Println("====================> %+v <====================")
+		fmt.Println("====================> +v <====================")
 		fmt.Printf("%+v\n\n", err)
 
 		// %#-v: Output caller details, useful for troubleshooting with JSON formatted output.
-		fmt.Println("====================> %#-v <====================")
+		fmt.Println("====================> #-v <====================")
 		fmt.Printf("%#-v\n\n", err)
 
 		// %#+v: Output full error stack details, useful for debugging with JSON formatted output.
-		fmt.Println("====================> %#+v <====================")
+		fmt.Println("====================> #+v <====================")
 		fmt.Printf("%#+v\n\n", err)
 
 		// do some business process based on the error type
@@ -51,7 +51,7 @@ func main() {
 func bindUser() error {
 	if err := getUser(); err != nil {
 		// Step3: Wrap the error with a new error message and a new error code if needed.
-		return errors.WrapC(err, code.ErrEncodingFailed, "encoding user 'Lingfei Kong' failed.")
+		return errors.WrapC(err, code.ErrEncodingFailed, "encoding user 'SRE' failed.")
 	}
 
 	return nil
@@ -60,7 +60,7 @@ func bindUser() error {
 func getUser() error {
 	if err := queryDatabase(); err != nil {
 		// Step2: Wrap the error with a new error message.
-		return errors.Wrap(err, "get user failed.")
+		return errors.Wrap(err, "get user failed")
 	}
 
 	return nil

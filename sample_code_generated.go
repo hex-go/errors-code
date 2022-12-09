@@ -6,7 +6,7 @@
 
 package code
 
-// init register error codes defines in this source code to `github.com/marmotedu/errors`
+// init register error codes defines in this source code to `gitlab.icos.city/icospaas/errors`
 func init() {
 	register(ErrUserNotFound, 404, "User not found")
 	register(ErrUserAlreadyExist, 400, "User already exist")

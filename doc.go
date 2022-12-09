@@ -1,1 +1,1 @@
-package code // import "github.com/marmotedu/sample-code"
+package code // import "gitlab.icos.city/icospaas/errors-code"
